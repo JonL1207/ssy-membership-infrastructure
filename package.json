@@ -1,0 +1,32 @@
+{
+  "name": "ssy-membership-infrastructure",
+  "version": "1.0.0",
+  "description": "Membership infrastructure for the Scottish Socialist Youth(SSY) party to allow it's members to register, log in, control their data and alter their membership subscription and donation details. ",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonL1207/ssy-membership-infrastructure.git"
+  },
+  "author": "Jon Law",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonL1207/ssy-membership-infrastructure/issues"
+  },
+  "homepage": "https://github.com/JonL1207/ssy-membership-infrastructure#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.2"
+  }
+}
