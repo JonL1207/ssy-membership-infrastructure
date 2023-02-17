@@ -1,1 +1,1 @@
-# ssy-membership-infrastructure
+# SSY Membership Infrastructure
