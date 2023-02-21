@@ -4,9 +4,9 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose');
 const helmet = require('helmet');
-const memberRoutes = require('./routes/memberRoutes');
-const adminRoutes = require('./routes/adminRoutes');
 const authRoutes = require('./routes/authRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+const memberRoutes = require('./routes/memberRoutes');
 const morgan = require('morgan');
 
 const app = express();
@@ -45,8 +45,8 @@ app.set('view engine', 'ejs');
 
 //Routes
 app.get('/', (req, res) => res.send('index'));
-//app.use('/members', memberRoutes);
-//app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
+app.use('/admin', adminRoutes);
+app.use('/members', memberRoutes);
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
