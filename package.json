@@ -29,6 +29,7 @@
     "express-session": "^1.17.3",
     "helmet": "^6.0.1",
     "mongoose": "^6.9.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "validator": "^13.9.0"
   }
 }

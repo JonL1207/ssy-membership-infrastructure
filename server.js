@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const memberRoutes = require('./routes/memberRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const authRoutes = require('./routes/authRoutes');
 const morgan = require('morgan');
 
 const app = express();
@@ -14,6 +15,12 @@ const store = new MongoDBStore({
     uri: process.env.MONGO_URI,
     collection: 'sessions'
 });
+
+// Database Connection
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('Connected to MongoDB!'))
+    .catch((err) => console.log(err));
 
 // Middleware
 app.use(express.static('public'));
@@ -36,15 +43,10 @@ app.use(morgan('dev'));
 // View Engine
 app.set('view engine', 'ejs');
 
-// Database Connection
-mongoose.set('strictQuery', false);
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log('Connected to MongoDB!'))
-    .catch((err) => console.log(err));
-
 //Routes
-app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => res.send('index'));
 //app.use('/members', memberRoutes);
 //app.use('/admin', adminRoutes);
+app.use('/auth', authRoutes);
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
