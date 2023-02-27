@@ -13,6 +13,11 @@ router.get('/:id', memberController.member_GET);
 // @access  Authenticated
 router.get('/subscriptions', memberController.subscriptions_GET);
 
+// @route   GET member/:id
+// @desc    Displays the update details page for a member
+// @access  Authenticated
+router.patch('/:id', memberController.update_member_GET);
+
 // @route   PATCH member/:id
 // @desc    Allows a member to update their details
 // @access  Authenticated

@@ -13,10 +13,20 @@ router.get('/all-members', adminController.all_members_GET);
 // @access  Admin-Authenticated
 router.get('/single-member/:id', adminController.single_member_GET);
 
+// @route   GET admin/create-member
+// @desc    Displays create member page for admin
+// @access  Admin-Authenticated
+router.post('/create-member');
+
 // @route   POST admin/create-member
 // @desc    Allows an admin to create a new member for the system
 // @access  Admin-Authenticated
 router.post('/create-member', adminController.create_member_POST);
+
+// @route   GET admin/update-member/:id
+// @desc    Displays the update member page for the admin
+// @access  Admin-Authenticated
+router.patch('/update-member/:id');
 
 // @route   PATCH admin/update-member/:id
 // @desc    Allows an admin to update the details for a single member of the system

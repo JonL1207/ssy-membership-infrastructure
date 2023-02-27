@@ -36,6 +36,6 @@ router.post('/forgot-password', authController.forgot_password_POST);
 // @route   GET auth/logout
 // @desc    Logs a user out of the system
 // @access  Public
-router.get('/logout', authController.logout_GET);
+router.post('/logout', authController.logout_POST);
 
 module.exports = router;
