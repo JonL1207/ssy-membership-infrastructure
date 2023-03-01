@@ -4,7 +4,7 @@ module.exports.member_GET = async (req, res) => {
     try{
         const user = await User.getSingle(req.params.id);
         res.status(200).json(user);
-        // render the member home page with info aboyr user from above
+        // render the member home page with info about user from above
     } catch(err){ 
         // handle errors function
         res.status(400).json(err.message);
