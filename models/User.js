@@ -139,8 +139,6 @@ userSchema.statics.getSingle = async function(id){
 userSchema.statics.getAll = async function(){
     const users = await this.find({});
 
-    console.log(users.length);
-
     if(users.length < 1){
         throw new Error('Could not find any users');
     } else {

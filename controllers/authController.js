@@ -5,7 +5,7 @@ module.exports.register_GET = (req, res) => {
 };
 
 module.exports.register_POST = async (req, res) => {
-    const { firstName, lastName, email, password, membershipLevel } = req.body; // sote in 1 const and user const.email etc in user model
+    const { firstName, lastName, email, password, membershipLevel } = req.body; // store in 1 const and user const.email etc in user model
 
     try{
         const user = await User.register(firstName, lastName, email, password, membershipLevel)

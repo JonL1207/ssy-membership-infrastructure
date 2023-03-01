@@ -1,6 +1,6 @@
 // Format each users membership number based on their initails, the party initials,
 // an incremental number starting from 10000 and the current year
-module.exports = formatMembershipNumber= (firstInitial, lastInitial, previousMembershipNumber) => {
+module.exports = formatMembershipNumber = (firstInitial, lastInitial, previousMembershipNumber) => {
     const firstNameInitial = firstInitial.slice(0, 1);
     const lastNameInitial = lastInitial.slice(0, 1);
     const party = 'SSY';
